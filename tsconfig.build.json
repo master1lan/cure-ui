@@ -4,5 +4,5 @@
   "extends": "./tsconfig",
 
   "include": ["src/**/*.ts*"],
-  "exclude": ["stc/**/__test/*.ts*", "src/utils"]
+  "exclude": ["stc/**/__test/*.ts*"]
 }

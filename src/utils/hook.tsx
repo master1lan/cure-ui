@@ -1,11 +1,4 @@
-import {
-  RefObject,
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from "react";
+import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { ReactClientRect, ReactRef } from "./type";
 import getScrollBarSize from "./getScrollBarSize";
 /**

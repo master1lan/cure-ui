@@ -14,11 +14,15 @@ export default defineConfig({
       "@src": resolve(__dirname, "src"),
     },
   },
+  optimizeDeps: {
+    entries: ["src/**/*.ts*"],
+    include: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
+  },
   build: {
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, "src/index.ts"),
-      name: "demo-ui",
+      name: "cure-ui",
       fileName: (format) => `index.${format}.js`,
     },
     sourcemap: true,

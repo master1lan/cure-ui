@@ -1,31 +1,33 @@
 {
-  "name": "demo-ui",
+  "name": "cure-ui",
   "version": "0.0.0",
-  "private": false,
   "author": "master1lan",
-  "description": "todo",
+  "description": "Simple implementation of react component library",
   "type": "module",
   "main": "./lib/index.umd.js",
   "keywords": [
-    "todo"
+    "react",
+    "react-component"
   ],
   "repository": {
     "type": "git",
-    "url": "todo",
+    "url": "https://github.com/master1lan/cure-ui",
     "directory": "src"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://www.todo.com"
+    "url": "https://github.com/master1lan/cure-ui/issues"
   },
   "homepage": "todo",
   "scripts": {
-    "dev": "vite",
+    "dev:src": "vite",
+    "dev:dumi": "run-s lib:build dumi",
     "lib:build": "vite build",
     "lib:types": "tsc -p tsconfig.build.json",
+    "lib:doc": "cross-env APP_ROOT=dumi dumi build",
+    "lib": "run-s lib:*",
     "preview": "vite preview",
-    "dumi": "cross-env APP_ROOT=dumi dumi dev",
-    "dumi-build": "cross-env APP_ROOT=dumi dumi build"
+    "dumi": "cross-env APP_ROOT=dumi dumi dev"
   },
   "files": [
     "lib"
@@ -48,6 +50,7 @@
     "@types/react": "^18.0.26",
     "@types/react-dom": "^18.0.9",
     "@vitejs/plugin-react": "^3.0.0",
+    "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "dumi": "^2.1.4",
     "react": "^18.2.0",
@@ -58,14 +61,14 @@
     "webpack": ">=5.20.0 <6.0.0"
   },
   "peerDependencies": {
-    "@emotion/styled": "^11.10.5",
     "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "react": ">=18",
     "react-dom": ">=18"
   },
   "dependencies": {
-    "@emotion/styled": "^11.10.5",
     "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "nanoid": "^4.0.0"
   }
 }

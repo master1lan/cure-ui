@@ -24,8 +24,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
         hello
       </p>
     </ToolTip> */}
-    <App />
-    <TestPopOver />
+    {/* <App /> */}
+    {/* <TestPopOver /> */}
+    <button onClick={() => message.info("hello")}>click me!</button>
   </div>
 );
 

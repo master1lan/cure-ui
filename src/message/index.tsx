@@ -1,45 +1,10 @@
-import React, { FC, useState } from "react";
+import { FC, useState } from "react";
 import { nanoid } from "nanoid";
-
-import styled from "@emotion/styled";
-import { css, keyframes } from "@emotion/react";
 import { createRoot } from "react-dom/client";
-type MessageType = "info";
-interface MessageItemProps {
-  text: string;
-  type: MessageType;
-}
-const k_in = keyframes`
-  from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
+import { MessageP } from "./style";
+import { ObjectToHtmlStyle } from "@src/utils/css";
+import { MessageItemProps, Notice, MessageType } from "./type";
 
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-`,
-  k_out = keyframes`
-0% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-`;
-const MessageP = styled.p`
-  border-radius: 8px;
-  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 10px;
-  padding: 12px 24px;
-  margin-bottom: 10px;
-  display: flex;
-  flex-flow: row nowrap;
-  animation: ${k_in} 0.1s linear, ${k_out} 0.1s linear 2.9s forwards;
-`;
 //todo 增加svg的显示
 const MessageItem: FC<MessageItemProps> = (props) => {
   const { text, type } = props;
@@ -50,26 +15,24 @@ const MessageItem: FC<MessageItemProps> = (props) => {
   );
 };
 
-interface Notice extends MessageItemProps {
-  key: string;
-}
 let add: (message: Notice) => void;
 const containerId = `container_${nanoid(4)}`;
-const containerClass = css({
-  position: "fixed",
-  top: "10px",
-  left: "50%",
-  transform: "translate(-50%, 0)",
-  zIndex: "9999",
-});
+
 function getContainer() {
-  let resDom = document.querySelector(containerId);
+  let resDom = document.querySelector(containerId) as HTMLElement;
   if (!resDom) {
     resDom = document.createElement("div");
     resDom.id = containerId;
-    //todo 添加classname
-
-    resDom.className = containerClass.name;
+    ObjectToHtmlStyle(
+      {
+        position: "fixed",
+        top: "10px",
+        left: "50%",
+        transform: "translate(-50%, 0)",
+        zIndex: "9999",
+      },
+      resDom
+    );
     document.body.appendChild(resDom);
   }
   return resDom;
@@ -85,7 +48,7 @@ const MessageContainer = () => {
   add = (msg) => {
     setList((pre) => [...pre, msg]);
     setTimeout(() => {
-      remove(msg);
+      // remove(msg);
     }, timeout);
   };
   return (
@@ -107,3 +70,4 @@ const message = (() => {
 })();
 
 export default message;
+//todo ！！！ 改成动态创建
