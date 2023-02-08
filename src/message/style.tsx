@@ -50,5 +50,5 @@ export const MessageP = styled.p`
   margin-bottom: 10px;
   display: flex;
   flex-flow: row nowrap;
-  /* ${MessagePAnimationConstructor(3, 0.1)} */
+  ${MessagePAnimationConstructor(3, 0.1)}
 `;

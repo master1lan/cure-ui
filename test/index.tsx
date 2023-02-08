@@ -6,6 +6,7 @@ import Button from "@src/button";
 import Modal from "../src/modal/index";
 import ToolTip from "@src/tooltip";
 import Popover from "@src/popover";
+import Input from "@src/input";
 
 const _ButtonGroup = () => (
   <>
@@ -18,8 +19,24 @@ const _ButtonGroup = () => (
   </>
 );
 
+const _inputGroup = () => (
+  <>
+    <Input defaultValue={"123"} onChange={() => {}} />
+  </>
+);
+
+const _messagegroup = () => (
+  <>
+    <Button onClick={() => message.info("hello world" + Math.random() * 10)}>
+      test message
+    </Button>
+  </>
+);
+
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <div>
-    <_ButtonGroup />
+    {/* <_ButtonGroup /> */}
+    {/* <_inputGroup /> */}
+    <_messagegroup />
   </div>
 );

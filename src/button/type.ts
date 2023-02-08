@@ -49,7 +49,7 @@ export const ThemeToCss = (theme: unknown): SerializedStyles => {
 
 type NativeButtonProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "type" | "onClick"
+  "type"
 > &
   Partial<{
     htmlType: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];

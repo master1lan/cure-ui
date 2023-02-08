@@ -16,7 +16,7 @@ const MessageItem: FC<MessageItemProps> = (props) => {
 };
 
 let add: (message: Notice) => void;
-const containerId = `container_${nanoid(4)}`;
+const containerId = `container_message`;
 
 function getContainer() {
   let resDom = document.querySelector(containerId) as HTMLElement;
@@ -48,7 +48,7 @@ const MessageContainer = () => {
   add = (msg) => {
     setList((pre) => [...pre, msg]);
     setTimeout(() => {
-      // remove(msg);
+      remove(msg);
     }, timeout);
   };
   return (

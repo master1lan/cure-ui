@@ -1,7 +1,15 @@
-import { useState } from "react";
+import { InputWrapper } from "./style";
 import { InputProps } from "./type";
+import customcss from "@src/utils/css";
 export default function Input(props: InputProps) {
-  const { defaultValue, onChange } = props;
+  const { defaultValue, onChange, sx, ...resProps } = props;
 
-  return <input value={defaultValue} onChange={onChange} />;
+  return (
+    <InputWrapper
+      css={customcss(sx)}
+      value={defaultValue}
+      onChange={onChange}
+      {...resProps}
+    />
+  );
 }
