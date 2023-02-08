@@ -6,48 +6,20 @@ import Button from "@src/button";
 import Modal from "../src/modal/index";
 import ToolTip from "@src/tooltip";
 import Popover from "@src/popover";
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
-  <div
-    style={{
-      width: "400px",
-      height: "190px",
-    }}
-  >
-    {/* <ToolTip title='tooltip'>
-      <p
-        style={{
-          backgroundColor: "skyblue",
-          height: "100px",
-          width: "200px",
-        }}
-      >
-        hello
-      </p>
-    </ToolTip> */}
-    {/* <App /> */}
-    {/* <TestPopOver /> */}
-    <button onClick={() => message.info("hello")}>click me!</button>
-  </div>
+
+const _ButtonGroup = () => (
+  <>
+    <Button size='small'>small</Button>
+    <Button size='middle'>middle</Button>
+    <Button size='large'>large</Button>
+    <Button shape='circle'>circle</Button>
+    <Button shape='default'>default</Button>
+    <Button shape='round'>round</Button>
+  </>
 );
 
-function TestPopOver() {
-  return (
-    <>
-      <Popover defaultOpen={false} content={<p style={{}}>popover test</p>}>
-        <button>hello popover</button>
-      </Popover>
-    </>
-  );
-}
-
-function App() {
-  const [visible, set] = useState(false);
-  return (
-    <>
-      <button onClick={() => set((item) => !item)}>hello</button>
-      <Modal visible={visible} closeModal={() => set((item) => !item)}>
-        <p>123456</p>
-      </Modal>
-    </>
-  );
-}
+ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+  <div>
+    <_ButtonGroup />
+  </div>
+);

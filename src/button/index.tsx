@@ -1,6 +1,6 @@
 import customcss from "../utils/css";
 import { ButtonWrapper } from "./style";
-import { ButtonProps, CustomButtonProps } from "./type";
+import { ButtonProps, ButtonThemeType } from "./type";
 import CustomThemeProvider from "@src/utils/wapper";
 
 export default function Button(props: ButtonProps) {
@@ -11,7 +11,7 @@ export default function Button(props: ButtonProps) {
     type = "default",
     ...resProps
   } = props;
-  const ButtonTheme: CustomButtonProps = {
+  const ButtonTheme: ButtonThemeType = {
     shape,
     size,
     type,
