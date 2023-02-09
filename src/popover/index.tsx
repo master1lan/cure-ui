@@ -23,6 +23,7 @@ export default function Popover(props: PopOverProps) {
               set((item) => !item);
             }}
             css={customcss(sx)}
+            {...resProps}
           >
             {content}
           </PopoverContent>
