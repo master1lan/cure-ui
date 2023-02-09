@@ -16,7 +16,13 @@ export default function Popover(props: PopOverProps) {
         ref: anchorRef,
       })}
       {open && (
-        <Portal>
+        <Portal
+          sx={{
+            position: "fixed",
+            left: "0",
+            top: "0",
+          }}
+        >
           <PopoverContent
             anchorRef={anchorRef}
             onClose={() => {

@@ -20,7 +20,13 @@ export default function ToolTip(props: ToolTipProps) {
         ...resProps,
       })}
       {visible && (
-        <Portal>
+        <Portal
+          sx={{
+            position: "fixed",
+            left: "0",
+            top: "0",
+          }}
+        >
           <ToolTipTrigger childrenRef={targetEleRef} title={title} sx={sx} />
         </Portal>
       )}

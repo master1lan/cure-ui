@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useLayoutEffect, useState } from "react";
 import { ReactClientRect, ReactRef } from "./type";
 import getScrollBarSize from "./getScrollBarSize";
+import { getBodyMarginAndPadding } from "./fn";
 /**
  * @description 获取ref元素的clientRect属性值
  */
@@ -47,16 +48,18 @@ export const usePlacement = ({
         top: ContentTopPxNum,
         height: ContentHeightPxNum,
       } = contentRect!,
-      {
-        left: TriggerLeftPxNum,
-        width: TriggerWidthPxNum,
-        top: TriggerTopPxNum,
-        height: TriggerHeightPxNum,
-      } = triggerRect!;
+      { width: TriggerWidthPxNum, height: TriggerHeightPxNum } = triggerRect!;
+    const { margin: BodyMarginWithPx, padding: BodyPaddingWithPx } =
+      getBodyMarginAndPadding();
+    const XCenter =
+        ContentLeftPxNum -
+        (parseInt(BodyMarginWithPx.left) + parseInt(BodyPaddingWithPx.left)) +
+        (ContentWidthPxNum >> 1) -
+        (TriggerWidthPxNum >> 1),
+      YCenter = ContentTopPxNum + ContentHeightPxNum;
     //todo 目前是放到上面，后续要根据位置调整
-    const transFormX = ContentLeftPxNum,
-      transFormY = ContentTopPxNum;
-    console.log({ transFormX, transFormY });
+    const transFormX = XCenter,
+      transFormY = YCenter;
     set((obj) => ({
       transform: `translate(${transFormX}px,${transFormY}px)`,
     }));

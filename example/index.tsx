@@ -7,12 +7,14 @@ import { useState } from "react";
 import { Button } from "@src/index";
 import ModalExample from "@src/modal/example";
 import PopoverExample from "@src/popover/example";
+import TooltipExample from "@src/tooltip/example";
 const routerList: [string, EmotionJSX.Element][] = [
   ["button", <ButtonExample />],
   ["input", <InputExample />],
   ["message", <MessageExample />],
   ["modal", <ModalExample />],
   ["popover", <PopoverExample />],
+  ["tooltip", <TooltipExample />],
 ];
 
 function Router() {
