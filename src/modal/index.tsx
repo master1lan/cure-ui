@@ -4,8 +4,9 @@ import type { ModalProps } from "./type";
 import { useBodyScrollHide } from "@src/utils/hook";
 import { ReactClickEvent } from "@src/utils/type";
 import customcss from "@src/utils/css";
+import { forwardRef } from "react";
 
-export default function Modal(props: ModalProps) {
+const Modal = forwardRef(function Modal(props: ModalProps, ref: any) {
   const { visible = true, children, closeModal, sx, ...resProps } = props,
     handlerClick = (event: ReactClickEvent) => {
       event.stopPropagation();
@@ -22,6 +23,7 @@ export default function Modal(props: ModalProps) {
             onClick={handlerClick}
             {...resProps}
             css={customcss(sx)}
+            ref={ref}
           >
             {children}
           </ModalContainer>
@@ -29,4 +31,6 @@ export default function Modal(props: ModalProps) {
       )}
     </>
   );
-}
+});
+
+export default Modal;

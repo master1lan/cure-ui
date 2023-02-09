@@ -1,8 +1,8 @@
 import { InputWrapper } from "./style";
 import { InputProps } from "./type";
 import customcss from "@src/utils/css";
-import { useState } from "react";
-export default function Input(props: InputProps) {
+import { forwardRef, useState } from "react";
+const Input = forwardRef(function Input(props: InputProps, ref: any) {
   const { defaultValue, onChange, sx, ...resProps } = props;
   const [value, set] = useState(defaultValue),
     handlerchange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -16,6 +16,8 @@ export default function Input(props: InputProps) {
       value={value}
       onChange={handlerchange}
       {...resProps}
+      ref={ref}
     />
   );
-}
+});
+export default Input;
