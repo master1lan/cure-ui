@@ -5,7 +5,7 @@ import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [peerDepsExternal(), react()],
-  root: resolve(__dirname, "test"),
+  root: resolve(__dirname, "example"),
   server: {
     host: true,
   },
@@ -26,17 +26,19 @@ export default defineConfig({
       fileName: (format) => `index.${format}.js`,
     },
     sourcemap: true,
-    // rollupOptions: {
-    //   // 确保外部化处理那些你不想打包进库的依赖
-    //   external: ["react", "react-dom"],
-    //   output: {
-    //     globals: {
-    //       react: "React",
-    //       "react-dom": "react-dom",
-    //     },
-    //   },
-    //   // todo lib代码需要压缩，最好提供esm版本的代码
-    // },
+    rollupOptions: {
+      // 确保外部化处理那些你不想打包进库的依赖
+      external: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
+      output: {
+        globals: {
+          react: "React",
+          "react-dom": "react-dom",
+          "@emotion/styled": "@emotion/styled",
+          "@emotion/react": "@emotion/react",
+        },
+      },
+      // todo lib代码需要压缩，最好提供esm版本的代码
+    },
     outDir: resolve(__dirname, "lib"),
     emptyOutDir: true,
   },

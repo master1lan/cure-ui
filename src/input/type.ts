@@ -2,7 +2,7 @@ import { CustomSxType } from "@src/utils/type";
 
 type CustomInputProps = {
   defaultValue: string;
-  onChange: () => void;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 type NativeInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,

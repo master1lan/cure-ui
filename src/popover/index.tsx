@@ -1,18 +1,12 @@
 import Portal from "@src/portal";
 import { useClientRect, usePlacement } from "@src/utils/hook";
-import {
-  cloneElement,
-  createElement,
-  FC,
-  useEffect,
-  useRef,
-  useState,
-} from "react";
+import { cloneElement, FC, useEffect, useRef, useState } from "react";
 import { PopOverProps } from "./type";
 import { ReactRef } from "../utils/type";
+import customcss from "@src/utils/css";
 
 export default function Popover(props: PopOverProps) {
-  const { defaultOpen, children, content, ...resProps } = props;
+  const { defaultOpen, children, content, sx, ...resProps } = props;
   const [open, set] = useState(defaultOpen);
   const anchorRef = useRef(null);
   return (
@@ -28,6 +22,7 @@ export default function Popover(props: PopOverProps) {
             onClose={() => {
               set((item) => !item);
             }}
+            css={customcss(sx)}
           >
             {content}
           </PopoverContent>

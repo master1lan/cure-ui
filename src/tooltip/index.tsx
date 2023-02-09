@@ -4,9 +4,10 @@ import { ToolTipProps } from "./type";
 import { useClientRect, usePlacement } from "../utils/hook";
 import { ReactRef } from "../utils/type";
 import Portal from "@src/portal";
+import customcss from "@src/utils/css";
 
 export default function ToolTip(props: ToolTipProps) {
-  const { children, title, ...resProps } = props;
+  const { children, title, sx, ...resProps } = props;
   const [visible, set] = useState(false);
   const targetEleRef = useRef(null);
 
@@ -20,17 +21,17 @@ export default function ToolTip(props: ToolTipProps) {
       })}
       {visible && (
         <Portal>
-          <ToolTipTrigger childrenRef={targetEleRef} title={title} />
+          <ToolTipTrigger childrenRef={targetEleRef} title={title} sx={sx} />
         </Portal>
       )}
     </>
   );
 }
 
-const ToolTipTrigger: FC<{ childrenRef: ReactRef; title: string }> = (
+const ToolTipTrigger: FC<{ childrenRef: ReactRef; title: string; sx: any }> = (
   props
 ) => {
-  const { childrenRef, title, ...resProps } = props;
+  const { childrenRef, title, sx, ...resProps } = props;
   const toolTipRef = useRef(null);
   const toolTipRect = useClientRect(toolTipRef),
     targetEleRect = useClientRect(childrenRef);
@@ -47,6 +48,7 @@ const ToolTipTrigger: FC<{ childrenRef: ReactRef; title: string }> = (
           visibility: styleTransform.transform ? "visible" : "hidden",
         }}
         {...resProps}
+        css={customcss(sx)}
       >
         {title}
       </P>

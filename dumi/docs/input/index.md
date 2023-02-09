@@ -1,5 +1,5 @@
 ```tsx
-import { Input } from "demo-ui";
+import { Input } from "cure-ui";
 
 export default () => (
   <div>

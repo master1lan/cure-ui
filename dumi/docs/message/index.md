@@ -1,5 +1,5 @@
 ```tsx
-import { Button, message } from "demo-ui";
+import { Button, message } from "cure-ui";
 
 export default () => (
   <div>
