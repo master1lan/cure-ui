@@ -1,3 +1,5 @@
+/// <reference types="vitest" />
+/// <reference types="vite/client" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
@@ -5,7 +7,6 @@ import { resolve } from "path";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [peerDepsExternal(), react()],
-  root: resolve(__dirname, "example"),
   server: {
     host: true,
   },
@@ -17,6 +18,13 @@ export default defineConfig({
   optimizeDeps: {
     entries: ["src/**/*.ts*"],
     include: ["react", "react-dom", "@emotion/react", "@emotion/styled"],
+  },
+  test: {
+    globals: true,
+    environment: "jsdom",
+    coverage: {
+      reporter: ["text", "json", "html"],
+    },
   },
   build: {
     lib: {
