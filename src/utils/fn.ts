@@ -47,3 +47,7 @@ function openValueExampleMarginAndPadding(str: string) {
     left,
   };
 }
+
+export function humpStringToDashString(str: string) {
+  return str.replace(/\B([A-Z])/g, "-$1").toLowerCase();
+}

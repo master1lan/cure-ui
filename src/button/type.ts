@@ -1,33 +1,41 @@
 import { css, SerializedStyles } from "@emotion/react";
 import { DefensiveSwitch } from "@src/utils/fn";
-import { CustomSxType } from "@src/utils/type";
+import { CssSelectRequiredType, CustomSxType } from "@src/utils/type";
 /**
  * button的外形，circle为圆形，round则比较圆滚。
  */
-type ButtonShape = "default" | "circle" | "round";
-export const ButtonShapeToCss = (input: ButtonShape) => {
-  return css`
-    border-radius: ${DefensiveSwitch(
+export const ButtonShapeToCssChangeStyleNames = ["borderRadius"] as const,
+  ButtonShapeTypeArr = ["default", "circle", "round"] as const;
+type ButtonShape = (typeof ButtonShapeTypeArr)[number];
+export const ButtonShapeToCss = (
+  input: ButtonShape
+): CssSelectRequiredType<(typeof ButtonShapeToCssChangeStyleNames)[number]> => {
+  return {
+    borderRadius: DefensiveSwitch(
       input,
       { default: "4px", circle: "50%", round: "8px" },
-      "0px"
-    )};
-  `;
+      "4px"
+    ),
+  };
 };
-type ButtonSize = "large" | "middle" | "small";
-const ButtonSizeToCss = (input: ButtonSize) => {
-  return css`
-    height: ${DefensiveSwitch(
+export const ButtonSizeToCssChangeStyleNames = ["height", "padding"] as const;
+export const ButtonSizeTypeArr = ["large", "middle", "small"] as const;
+type ButtonSize = (typeof ButtonSizeTypeArr)[number];
+export const ButtonSizeToCss = (
+  input: ButtonSize
+): CssSelectRequiredType<(typeof ButtonSizeToCssChangeStyleNames)[number]> => {
+  return {
+    height: DefensiveSwitch(
       input,
       { large: "40px", middle: "32px", small: "24px" },
       "32px"
-    )};
-    padding: ${DefensiveSwitch(
+    ),
+    padding: DefensiveSwitch(
       input,
       { large: "6px 15px", middle: "4px 15px", small: "0px 7px" },
       "4px 15px"
-    )};
-  `;
+    ),
+  };
 };
 
 type ButtonType = "primary" | "default" | "text" | "dashed";
@@ -41,10 +49,10 @@ type ButtonType = "primary" | "default" | "text" | "dashed";
 
 export const ThemeToCss = (theme: unknown): SerializedStyles => {
   const _theme = theme as ButtonThemeType;
-  return css`
-    ${ButtonSizeToCss(_theme.size)}
-    ${ButtonShapeToCss(_theme.shape)}
-  `;
+  return css({
+    ...ButtonSizeToCss(_theme.size),
+    ...ButtonShapeToCss(_theme.shape),
+  });
 };
 
 type NativeButtonProps = Omit<
