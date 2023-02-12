@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .dumi
 coverage
+# README貌似在git中损坏了
+README.md
