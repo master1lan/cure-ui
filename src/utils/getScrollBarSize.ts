@@ -1,3 +1,5 @@
+import { ObjectToHtmlStyle } from "./css";
+
 let cached: number | null = null;
 
 export default function getScrollBarSize(): number {
@@ -5,22 +7,36 @@ export default function getScrollBarSize(): number {
     return cached;
   }
   const inner = document.createElement("div");
-  inner.style.width = "100%";
-  inner.style.height = "200px";
-  const outer = document.createElement("div"),
-    outerStyle = outer.style;
-  outerStyle.position = "absolute";
-  outerStyle.top = "0";
-  outerStyle.left = "0";
-  outerStyle.pointerEvents = "none";
-  outerStyle.visibility = "hidden";
-  outerStyle.width = "200px";
-  outerStyle.height = "150px";
-  outerStyle.overflow = "hidden";
+  ObjectToHtmlStyle(
+    {
+      width: "100%",
+      height: "200px",
+    },
+    inner
+  );
+  const outer = document.createElement("div");
+  ObjectToHtmlStyle(
+    {
+      position: "absolute",
+      top: "0",
+      left: "0",
+      pointerEvents: "none",
+      visibility: "hidden",
+      width: "200px",
+      height: "150px",
+      overflow: "hidden",
+    },
+    outer
+  );
   outer.appendChild(inner);
   document.body.appendChild(outer);
   const widthContained = inner.offsetWidth;
-  outer.style.overflow = "scroll";
+  ObjectToHtmlStyle(
+    {
+      overflow: "scroll",
+    },
+    outer
+  );
   let widthScroll = inner.offsetWidth;
 
   if (widthContained === widthScroll) {
