@@ -38,7 +38,7 @@ export const getBodyMarginAndPadding = () => {
   };
 };
 
-function openValueExampleMarginAndPadding(str: string) {
+export function openValueExampleMarginAndPadding(str: string) {
   const [top = "0px", right = top, bottom = top, left = right] = str.split(" ");
   return {
     top,
