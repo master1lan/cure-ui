@@ -53,11 +53,6 @@ const PopoverContent: FC<PopoverContentProps> = (props) => {
     const filterDomArr = [anchorRef.current, popoverItemRef.current];
     const handlerClick = (event: MouseEvent) => {
       const target = event.target;
-      console.log({
-        target,
-        filterDomArr,
-        isIn: filterDomArr.includes(target as HTMLElement),
-      });
       !filterDomArr.includes(target as HTMLElement) && onClose();
     };
     window.addEventListener("click", handlerClick);

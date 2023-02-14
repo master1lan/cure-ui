@@ -4,7 +4,8 @@
 
 import { describe, expect, vi, test } from "vitest";
 import { ObjectToHtmlStyle } from "../css";
-import { humpStringToDashString } from "../fn";
+import { curry, humpStringToDashString } from "../fn";
+import { fireEvent } from "@testing-library/react";
 import {
   DefensiveSwitch,
   getElementStyleByName,
@@ -108,5 +109,38 @@ describe("test humpStringToDashString", () => {
   test("no need transform", () => {
     const str = `abcd`;
     expect(humpStringToDashString(str)).toBe(str);
+  });
+});
+
+describe("test curry", () => {
+  test("no params", () => {
+    const fn = vi.fn();
+    const handler = curry(fn);
+    handler();
+    expect(fn).toBeCalledTimes(1);
+  });
+  test("one params", () => {
+    const fn = vi.fn((a) => {});
+    let handler = curry(fn);
+    //@ts-ignore
+    handler = handler();
+    expect(fn).toBeCalledTimes(0);
+    //@ts-ignore
+    handler(1);
+    expect(fn).toBeCalledTimes(1);
+  });
+  test("two params", () => {
+    const fn = vi.fn((a, b) => {});
+    let handler = curry(fn);
+    //@ts-ignore
+    handler = handler();
+    expect(fn).toBeCalledTimes(0);
+    //@ts-ignore
+    const params_1 = handler(1);
+    expect(fn).toBeCalledTimes(0);
+    params_1(2);
+    expect(fn).toBeCalledTimes(1);
+    handler(1, 2);
+    expect(fn).toBeCalledTimes(2);
   });
 });
