@@ -52,8 +52,13 @@ const PopoverContent: FC<PopoverContentProps> = (props) => {
   useEffect(() => {
     const filterDomArr = [anchorRef.current, popoverItemRef.current];
     const handlerClick = (event: MouseEvent) => {
-      const target = event?.target;
-      !filterDomArr.some((item) => item === target) && onClose();
+      const target = event.target;
+      console.log({
+        target,
+        filterDomArr,
+        isIn: filterDomArr.includes(target as HTMLElement),
+      });
+      !filterDomArr.includes(target as HTMLElement) && onClose();
     };
     window.addEventListener("click", handlerClick);
     return () => window.removeEventListener("click", handlerClick);
@@ -64,15 +69,17 @@ const PopoverContent: FC<PopoverContentProps> = (props) => {
   });
   return (
     <div
-      ref={popoverItemRef}
       //todo 修改样式
       style={{
         visibility: styleTransform.transform ? "visible" : "hidden",
         ...styleTransform,
         display: "inline-block",
+        position: "absolute",
       }}
     >
-      {children}
+      {cloneElement(children, {
+        ref: popoverItemRef,
+      })}
     </div>
   );
 };
