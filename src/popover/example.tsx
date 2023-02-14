@@ -1,5 +1,4 @@
 import Button from "@src/button";
-import { useState } from "react";
 import Popover from ".";
 
 export default function PopoverExample() {

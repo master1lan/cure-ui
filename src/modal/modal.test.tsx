@@ -5,18 +5,18 @@ import Modal from ".";
 
 describe("test modal", () => {
   test("modal visible", () => {
-    const { rerender, container } = render(
+    const { rerender } = render(
       <Modal visible={true} closeModal={() => {}}>
-        <div data-testId='test'>test</div>
+        <div>test</div>
       </Modal>
     );
-    expect(screen.getByTestId("test")).toHaveTextContent("test");
+    expect(screen.queryByText("test")).toBeInTheDocument();
     rerender(
       <Modal visible={false} closeModal={() => {}}>
-        <div data-testId='test'>test</div>
+        <div>test</div>
       </Modal>
     );
-    expect(container.childNodes.length).toEqual(0);
+    expect(screen.queryByText("test")).not.toBeInTheDocument();
   });
   test("modal closefn", () => {
     const handleClose = vi.fn();
