@@ -24,7 +24,9 @@
     // 允许 ts ignore
     "@typescript-eslint/ban-ts-comment": "off",
     // 允许 ts 强制存在
-    "@typescript-eslint/no-non-null-assertion": "off"
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-namespace": "off",
+    "@typescript-eslint/no-empty-interface": "off"
   },
   "settings": {
     "react": {
