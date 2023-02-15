@@ -6,5 +6,4 @@ import Popover from "./popover";
 import Portal from "./portal";
 // import
 import ToolTip from "./tooltip";
-
 export { Button, Input, message, Modal, Popover, Portal, ToolTip };

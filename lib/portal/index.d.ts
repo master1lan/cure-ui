@@ -1,3 +1,5 @@
 /// <reference types="react" />
-import { ProtalProps } from "./type";
-export default function Portal(props: ProtalProps): import("react").ReactPortal;
+declare const Portal: import("react").ForwardRefExoticComponent<{
+    children: import("react").ReactElement<any, string | import("react").JSXElementConstructor<any>>;
+} & import("../utils/type").NativeDivProps & import("../utils/type").CustomSxType & import("react").RefAttributes<unknown>>;
+export default Portal;
