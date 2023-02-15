@@ -1,5 +1,3 @@
-import { ReactRef } from "./type";
-
 /**
  * @description 简化版选择器
  */

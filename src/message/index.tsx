@@ -7,7 +7,7 @@ import { MessageItemProps, Notice, MessageType } from "./type";
 
 //todo 增加svg的显示
 const MessageItem: FC<MessageItemProps> = (props) => {
-  const { text, type } = props;
+  const { text } = props;
   return (
     <MessageP>
       <span>{text}</span>
@@ -54,7 +54,7 @@ const MessageContainer = () => {
   return (
     <>
       {msgList.map((msg) => (
-        <MessageItem {...msg} />
+        <MessageItem {...msg} key={msg.key} />
       ))}
     </>
   );

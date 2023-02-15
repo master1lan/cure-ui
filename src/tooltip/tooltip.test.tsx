@@ -1,6 +1,6 @@
 import { render, fireEvent, screen } from "@testing-library/react";
 // 引入测试 api ，用来编写用例的逻辑
-import { describe, expect, vi, test } from "vitest";
+import { describe, expect, test } from "vitest";
 import ToolTip from ".";
 
 const RenderToolTip = () =>

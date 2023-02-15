@@ -28,8 +28,8 @@ export const keyframesMessageIn = keyframes`
  * message animation constructor
  */
 export const MessagePAnimationConstructor = (
-  durantion: number = 3,
-  transformTime: number = 0.1
+  durantion = 3,
+  transformTime = 0.1
 ) => {
   if (durantion < transformTime) {
     throw new Error(

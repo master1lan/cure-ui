@@ -5,11 +5,9 @@
 import { describe, expect, vi, test } from "vitest";
 import { ObjectToHtmlStyle } from "../css";
 import { curry, humpStringToDashString } from "../fn";
-import { fireEvent } from "@testing-library/react";
 import {
   DefensiveSwitch,
   getElementStyleByName,
-  getBodyMarginAndPadding,
   openValueExampleMarginAndPadding,
 } from "../fn";
 
@@ -26,8 +24,7 @@ describe("test DefensiveSwitch", () => {
       a: "1",
       b: "2",
     };
-    //@ts-ignore
-    expect(DefensiveSwitch("c", obj, "12")).toBe("12");
+    expect(DefensiveSwitch("c", obj as any, "12")).toBe("12");
   });
 });
 

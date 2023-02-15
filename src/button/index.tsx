@@ -19,7 +19,7 @@ const Button = forwardRef(function Button(props: ButtonProps, ref: any) {
   };
   return (
     <CustomThemeProvider theme={ButtonTheme}>
-      <ButtonWrapper css={customcss(props.sx)} {...resProps} ref={ref}>
+      <ButtonWrapper css={customcss(sx)} {...resProps} ref={ref}>
         {props.children}
       </ButtonWrapper>
     </CustomThemeProvider>

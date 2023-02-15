@@ -60,7 +60,7 @@ export const usePlacement = ({
     //todo 目前是放到上面，后续要根据位置调整
     const transFormX = XCenter,
       transFormY = YCenter;
-    set((obj) => ({
+    set(() => ({
       transform: `translate(${transFormX}px,${transFormY}px)`,
     }));
   }, [contentRect, triggerRect]);
