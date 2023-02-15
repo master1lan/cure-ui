@@ -1,45 +1,45 @@
-import { render, fireEvent, screen } from "@testing-library/react";
+import { render, fireEvent, screen } from '@testing-library/react';
 // 引入测试 api ，用来编写用例的逻辑
-import { describe, expect, test } from "vitest";
-import Popover from ".";
+import { describe, expect, test } from 'vitest';
+import Popover from '.';
 
-describe("test popover", () => {
-  test("popover click", () => {
+describe('test popover', () => {
+  test('popover click', () => {
     render(
       <Popover defaultOpen={false} content={<div>hello</div>}>
         <button>click me</button>
       </Popover>
     );
-    expect(screen.queryByText("hello")).not.toBeInTheDocument();
-    fireEvent.click(screen.getByRole("button"));
-    expect(screen.queryByText("hello")).toBeInTheDocument();
+    expect(screen.queryByText('hello')).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.queryByText('hello')).toBeInTheDocument();
   });
-  test("popover click hidden", () => {
+  test('popover click hidden', () => {
     render(
-      <Popover defaultOpen={true} content={<div data-testid='test'>hello</div>}>
+      <Popover defaultOpen={true} content={<div data-testid="test">hello</div>}>
         <button>click me</button>
       </Popover>
     );
     // visible
-    expect(screen.queryByText("hello")).toBeInTheDocument();
+    expect(screen.queryByText('hello')).toBeInTheDocument();
     // hidden
-    fireEvent.click(screen.getByRole("button"));
-    expect(screen.queryByText("hello")).not.toBeInTheDocument();
+    fireEvent.click(screen.getByRole('button'));
+    expect(screen.queryByText('hello')).not.toBeInTheDocument();
   });
-  test("popover content click visible", () => {
+  test('popover content click visible', () => {
     render(
-      <Popover defaultOpen={true} content={<div data-testid='test'>hello</div>}>
+      <Popover defaultOpen={true} content={<div data-testid="test">hello</div>}>
         <button>click me</button>
       </Popover>
     );
     // visible
-    expect(screen.queryByText("hello")).toBeInTheDocument();
-    fireEvent.click(screen.getByTestId("test"));
-    expect(screen.queryByText("hello")).toBeInTheDocument();
+    expect(screen.queryByText('hello')).toBeInTheDocument();
+    fireEvent.click(screen.getByTestId('test'));
+    expect(screen.queryByText('hello')).toBeInTheDocument();
   });
-  test("popover outside click hidden", () => {
+  test('popover outside click hidden', () => {
     const { container } = render(
-      <Popover defaultOpen={true} content={<div data-testid='test'>hello</div>}>
+      <Popover defaultOpen={true} content={<div data-testid="test">hello</div>}>
         <button>click me</button>
       </Popover>,
       {
@@ -47,8 +47,8 @@ describe("test popover", () => {
       }
     );
     // visible
-    expect(screen.queryByText("hello")).toBeInTheDocument();
+    expect(screen.queryByText('hello')).toBeInTheDocument();
     fireEvent.click(container);
-    expect(screen.queryByText("hello")).not.toBeInTheDocument();
+    expect(screen.queryByText('hello')).not.toBeInTheDocument();
   });
 });

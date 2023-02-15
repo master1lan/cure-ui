@@ -1,20 +1,20 @@
-import ReactDOM from "react-dom/client";
-import ButtonExample from "@src/button/example";
-import InputExample from "@src/input/example";
-import MessageExample from "@src/message/example";
-import { EmotionJSX } from "@emotion/react/types/jsx-namespace";
-import { useState } from "react";
-import { Button } from "@src/index";
-import ModalExample from "@src/modal/example";
-import PopoverExample from "@src/popover/example";
-import TooltipExample from "@src/tooltip/example";
+import ReactDOM from 'react-dom/client';
+import ButtonExample from '@src/button/example';
+import InputExample from '@src/input/example';
+import MessageExample from '@src/message/example';
+import { EmotionJSX } from '@emotion/react/types/jsx-namespace';
+import { useState } from 'react';
+import { Button } from '@src/index';
+import ModalExample from '@src/modal/example';
+import PopoverExample from '@src/popover/example';
+import TooltipExample from '@src/tooltip/example';
 const routerList: [string, EmotionJSX.Element][] = [
-  ["button", <ButtonExample />],
-  ["input", <InputExample />],
-  ["message", <MessageExample />],
-  ["modal", <ModalExample />],
-  ["popover", <PopoverExample />],
-  ["tooltip", <TooltipExample />],
+  ['button', <ButtonExample />],
+  ['input', <InputExample />],
+  ['message', <MessageExample />],
+  ['modal', <ModalExample />],
+  ['popover', <PopoverExample />],
+  ['tooltip', <TooltipExample />],
 ];
 
 function Router() {
@@ -25,11 +25,11 @@ function Router() {
       <div>
         <nav
           style={{
-            display: "flex",
-            height: "50px",
-            justifyContent: "flex-start",
-            justifyItems: "center",
-            columnGap: "20px",
+            display: 'flex',
+            height: '50px',
+            justifyContent: 'flex-start',
+            justifyItems: 'center',
+            columnGap: '20px',
           }}
         >
           {routerList.map((item, key) => (
@@ -44,6 +44,6 @@ function Router() {
   );
 }
 
-ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
+ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <Router />
 );

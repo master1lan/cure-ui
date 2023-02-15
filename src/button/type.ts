@@ -1,11 +1,11 @@
-import { css, SerializedStyles } from "@emotion/react";
-import { DefensiveSwitch } from "@src/utils/fn";
-import { CssSelectRequiredType, CustomSxType } from "@src/utils/type";
+import { css, SerializedStyles } from '@emotion/react';
+import { DefensiveSwitch } from '@src/utils/fn';
+import { CssSelectRequiredType, CustomSxType } from '@src/utils/type';
 /**
  * button的外形，circle为圆形，round则比较圆滚。
  */
-export const ButtonShapeToCssChangeStyleNames = ["borderRadius"] as const,
-  ButtonShapeTypeArr = ["default", "circle", "round"] as const;
+export const ButtonShapeToCssChangeStyleNames = ['borderRadius'] as const,
+  ButtonShapeTypeArr = ['default', 'circle', 'round'] as const;
 type ButtonShape = (typeof ButtonShapeTypeArr)[number];
 export const ButtonShapeToCss = (
   input: ButtonShape
@@ -13,13 +13,13 @@ export const ButtonShapeToCss = (
   return {
     borderRadius: DefensiveSwitch(
       input,
-      { default: "4px", circle: "50%", round: "8px" },
-      "4px"
+      { default: '4px', circle: '50%', round: '8px' },
+      '4px'
     ),
   };
 };
-export const ButtonSizeToCssChangeStyleNames = ["height", "padding"] as const;
-export const ButtonSizeTypeArr = ["large", "middle", "small"] as const;
+export const ButtonSizeToCssChangeStyleNames = ['height', 'padding'] as const;
+export const ButtonSizeTypeArr = ['large', 'middle', 'small'] as const;
 type ButtonSize = (typeof ButtonSizeTypeArr)[number];
 export const ButtonSizeToCss = (
   input: ButtonSize
@@ -27,18 +27,18 @@ export const ButtonSizeToCss = (
   return {
     height: DefensiveSwitch(
       input,
-      { large: "40px", middle: "32px", small: "24px" },
-      "32px"
+      { large: '40px', middle: '32px', small: '24px' },
+      '32px'
     ),
     padding: DefensiveSwitch(
       input,
-      { large: "6px 15px", middle: "4px 15px", small: "0px 7px" },
-      "4px 15px"
+      { large: '6px 15px', middle: '4px 15px', small: '0px 7px' },
+      '4px 15px'
     ),
   };
 };
 
-type ButtonType = "primary" | "default" | "text" | "dashed";
+type ButtonType = 'primary' | 'default' | 'text' | 'dashed';
 //todo 增加type，以及说明文档
 // export const ButtonTypeToCss = (input: ButtonType) =>
 //   DefensiveSwitch(
@@ -57,10 +57,10 @@ export const ThemeToCss = (theme: unknown): SerializedStyles => {
 
 type NativeButtonProps = Omit<
   React.ButtonHTMLAttributes<HTMLButtonElement>,
-  "type"
+  'type'
 > &
   Partial<{
-    htmlType: React.ButtonHTMLAttributes<HTMLButtonElement>["type"];
+    htmlType: React.ButtonHTMLAttributes<HTMLButtonElement>['type'];
   }>;
 export type CustomButtonProps = Partial<{
   shape: ButtonShape;

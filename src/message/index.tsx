@@ -1,9 +1,9 @@
-import { FC, useState } from "react";
-import { nanoid } from "nanoid";
-import { createRoot } from "react-dom/client";
-import { MessageP } from "./style";
-import { ObjectToHtmlStyle } from "@src/utils/css";
-import { MessageItemProps, Notice, MessageType } from "./type";
+import { FC, useState } from 'react';
+import { nanoid } from 'nanoid';
+import { createRoot } from 'react-dom/client';
+import { MessageP } from './style';
+import { ObjectToHtmlStyle } from '@src/utils/css';
+import { MessageItemProps, Notice, MessageType } from './type';
 
 //todo 增加svg的显示
 const MessageItem: FC<MessageItemProps> = (props) => {
@@ -21,15 +21,15 @@ const containerId = `container_message`;
 function getContainer() {
   let resDom = document.querySelector(containerId) as HTMLElement;
   if (!resDom) {
-    resDom = document.createElement("div");
+    resDom = document.createElement('div');
     resDom.id = containerId;
     ObjectToHtmlStyle(
       {
-        position: "fixed",
-        top: "10px",
-        left: "50%",
-        transform: "translate(-50%, 0)",
-        zIndex: "9999",
+        position: 'fixed',
+        top: '10px',
+        left: '50%',
+        transform: 'translate(-50%, 0)',
+        zIndex: '9999',
       },
       resDom
     );
@@ -65,7 +65,7 @@ const message = (() => {
   const msgType = (type: MessageType) => (text: string) =>
     add({ text, type, key: nanoid(3) });
   return {
-    info: msgType("info"),
+    info: msgType('info'),
   };
 })();
 

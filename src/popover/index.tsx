@@ -1,9 +1,9 @@
-import Portal from "@src/portal";
-import { useClientRect, usePlacement } from "@src/utils/hook";
-import { cloneElement, FC, useEffect, useRef, useState } from "react";
-import { PopOverProps } from "./type";
-import { ReactRef } from "../utils/type";
-import customcss from "@src/utils/css";
+import Portal from '@src/portal';
+import { useClientRect, usePlacement } from '@src/utils/hook';
+import { cloneElement, FC, useEffect, useRef, useState } from 'react';
+import { PopOverProps } from './type';
+import { ReactRef } from '../utils/type';
+import customcss from '@src/utils/css';
 
 export default function Popover(props: PopOverProps) {
   const { defaultOpen, children, content, sx, ...resProps } = props;
@@ -18,9 +18,9 @@ export default function Popover(props: PopOverProps) {
       {open && (
         <Portal
           sx={{
-            position: "fixed",
-            left: "0",
-            top: "0",
+            position: 'fixed',
+            left: '0',
+            top: '0',
           }}
         >
           <PopoverContent
@@ -39,7 +39,7 @@ export default function Popover(props: PopOverProps) {
   );
 }
 
-type PopoverContentProps = Omit<PopOverProps, "defaultOpen" | "content"> & {
+type PopoverContentProps = Omit<PopOverProps, 'defaultOpen' | 'content'> & {
   onClose: () => void;
   anchorRef: ReactRef;
 };
@@ -55,8 +55,8 @@ const PopoverContent: FC<PopoverContentProps> = (props) => {
       const target = event.target;
       !filterDomArr.includes(target as HTMLElement) && onClose();
     };
-    window.addEventListener("click", handlerClick);
-    return () => window.removeEventListener("click", handlerClick);
+    window.addEventListener('click', handlerClick);
+    return () => window.removeEventListener('click', handlerClick);
   }, []);
   const styleTransform = usePlacement({
     triggerRect: popoverItemRect,
@@ -66,10 +66,10 @@ const PopoverContent: FC<PopoverContentProps> = (props) => {
     <div
       //todo 修改样式
       style={{
-        visibility: styleTransform.transform ? "visible" : "hidden",
+        visibility: styleTransform.transform ? 'visible' : 'hidden',
         ...styleTransform,
-        display: "inline-block",
-        position: "absolute",
+        display: 'inline-block',
+        position: 'absolute',
       }}
     >
       {cloneElement(children, {

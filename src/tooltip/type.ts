@@ -1,5 +1,5 @@
-import { CustomSxType, NativeDivProps } from "@src/utils/type";
-import { ReactElement } from "react";
+import { CustomSxType, NativeDivProps } from '@src/utils/type';
+import { ReactElement } from 'react';
 
 type CustomToolTipProps = {
   title: string;
@@ -7,5 +7,5 @@ type CustomToolTipProps = {
 };
 
 export type ToolTipProps = CustomToolTipProps &
-  Omit<NativeDivProps, "title"> &
+  Omit<NativeDivProps, 'title'> &
   CustomSxType;

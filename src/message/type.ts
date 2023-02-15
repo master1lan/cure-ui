@@ -1,4 +1,4 @@
-export type MessageType = "info";
+export type MessageType = 'info';
 
 export interface MessageItemProps {
   text: string;

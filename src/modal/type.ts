@@ -1,4 +1,4 @@
-import { CustomSxType, NativeDivProps } from "@src/utils/type";
+import { CustomSxType, NativeDivProps } from '@src/utils/type';
 
 type CustomModalProps = {
   visible: boolean;

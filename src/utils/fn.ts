@@ -29,7 +29,7 @@ export const getElementStyleByName = (
 };
 
 export const getBodyMarginAndPadding = () => {
-  const res = getElementStyleByName(document.body, "margin", "padding");
+  const res = getElementStyleByName(document.body, 'margin', 'padding');
   return {
     margin: openValueExampleMarginAndPadding(res[0]),
     padding: openValueExampleMarginAndPadding(res[1]),
@@ -37,7 +37,7 @@ export const getBodyMarginAndPadding = () => {
 };
 
 export function openValueExampleMarginAndPadding(str: string) {
-  const [top = "0px", right = top, bottom = top, left = right] = str.split(" ");
+  const [top = '0px', right = top, bottom = top, left = right] = str.split(' ');
   return {
     top,
     right,
@@ -47,5 +47,5 @@ export function openValueExampleMarginAndPadding(str: string) {
 }
 
 export function humpStringToDashString(str: string) {
-  return str.replace(/\B([A-Z])/g, "-$1").toLowerCase();
+  return str.replace(/\B([A-Z])/g, '-$1').toLowerCase();
 }

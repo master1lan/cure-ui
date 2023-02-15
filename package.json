@@ -26,13 +26,13 @@
     "lib:types": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
     "lib:doc": "cross-env APP_ROOT=dumi dumi build",
     "lib": "run-s lib:*",
-    "lint:fix": "eslint src --fix --ext .ts,.tsx",
     "preview": "vite preview",
     "dumi": "cross-env APP_ROOT=dumi dumi dev",
     "test": "vitest",
     "test:Publish": "yalc publish",
     "test:ui": "vitest --ui",
-    "coverage": "vitest run --coverage"
+    "coverage": "vitest run --coverage",
+    "prepare": "husky install"
   },
   "files": [
     "lib"
@@ -69,7 +69,9 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.32.2",
+    "husky": "^8.0.3",
     "jsdom": "^21.1.0",
+    "lint-staged": "^13.1.2",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.4",
     "react": "^18.2.0",

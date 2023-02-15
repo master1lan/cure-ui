@@ -1,4 +1,4 @@
-import { CustomSxType } from "@src/utils/type";
+import { CustomSxType } from '@src/utils/type';
 
 type CustomInputProps = {
   defaultValue: string | number;
@@ -6,7 +6,7 @@ type CustomInputProps = {
 };
 type NativeInputProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
-  "onChange" | "defaultValue"
+  'onChange' | 'defaultValue'
 >;
 
 export type InputProps = CustomInputProps & NativeInputProps & CustomSxType;

@@ -1,6 +1,6 @@
-# modal组件
+# modal 组件
 
-应该传入visible和closeModal函数，closeModal默认点击弹窗外执行。如果不想使用该特性则应该给closeModal赋值空函数。
+应该传入 visible 和 closeModal 函数，closeModal 默认点击弹窗外执行。如果不想使用该特性则应该给 closeModal 赋值空函数。
 
 ## todo
 

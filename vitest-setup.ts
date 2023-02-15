@@ -1,7 +1,7 @@
-import { expect, afterEach } from "vitest";
-import { cleanup } from "@testing-library/react";
-import { createSerializer, matchers, EmotionMatchers } from "@emotion/jest";
-import "@testing-library/jest-dom";
+import { expect, afterEach } from 'vitest';
+import { cleanup } from '@testing-library/react';
+import { createSerializer, matchers, EmotionMatchers } from '@emotion/jest';
+import '@testing-library/jest-dom';
 declare global {
   namespace Vi {
     interface Assertion extends EmotionMatchers {}

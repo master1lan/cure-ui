@@ -1,10 +1,10 @@
-import ToolTip from ".";
-import { Button } from "..";
+import ToolTip from '.';
+import { Button } from '..';
 
 export default function TooltipExample() {
   return (
     <>
-      <ToolTip title={"hello"}>
+      <ToolTip title={'hello'}>
         <Button>button</Button>
       </ToolTip>
     </>

@@ -1,10 +1,10 @@
-import styled from "@emotion/styled";
-import { cloneElement, FC, useRef, useState } from "react";
-import { ToolTipProps } from "./type";
-import { useClientRect, usePlacement } from "../utils/hook";
-import { ReactRef } from "../utils/type";
-import Portal from "@src/portal";
-import customcss from "@src/utils/css";
+import styled from '@emotion/styled';
+import { cloneElement, FC, useRef, useState } from 'react';
+import { ToolTipProps } from './type';
+import { useClientRect, usePlacement } from '../utils/hook';
+import { ReactRef } from '../utils/type';
+import Portal from '@src/portal';
+import customcss from '@src/utils/css';
 
 export default function ToolTip(props: ToolTipProps) {
   const { children, title, sx, ...resProps } = props;
@@ -22,9 +22,9 @@ export default function ToolTip(props: ToolTipProps) {
       {visible && (
         <Portal
           sx={{
-            position: "fixed",
-            left: "0",
-            top: "0",
+            position: 'fixed',
+            left: '0',
+            top: '0',
           }}
         >
           <ToolTipTrigger childrenRef={targetEleRef} title={title} sx={sx} />
@@ -51,7 +51,7 @@ const ToolTipTrigger: FC<{ childrenRef: ReactRef; title: string; sx: any }> = (
         ref={toolTipRef}
         style={{
           ...styleTransform,
-          visibility: styleTransform.transform ? "visible" : "hidden",
+          visibility: styleTransform.transform ? 'visible' : 'hidden',
         }}
         {...resProps}
         css={customcss(sx)}
@@ -63,7 +63,7 @@ const ToolTipTrigger: FC<{ childrenRef: ReactRef; title: string; sx: any }> = (
 };
 
 //todo add theme
-const P = styled("p")`
+const P = styled('p')`
   display: inline-block;
   padding: 5px 8px;
 

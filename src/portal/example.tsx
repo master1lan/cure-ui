@@ -1,6 +1,6 @@
-import { useState } from "react";
-import Portal from "./index";
-import Button from "../button/index";
+import { useState } from 'react';
+import Portal from './index';
+import Button from '../button/index';
 
 export default function PortalExample() {
   const [visible, set] = useState(false),

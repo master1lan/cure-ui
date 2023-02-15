@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
-import { CustomSxType, NativeDivProps } from "../utils/type";
+import { ReactElement } from 'react';
+import { CustomSxType, NativeDivProps } from '../utils/type';
 type CustomPopOverProps = {
   defaultOpen: boolean;
   children: ReactElement;

@@ -1,4 +1,4 @@
-import { RefObject, CSSProperties } from "react";
+import { RefObject, CSSProperties } from 'react';
 
 export type NativeDivProps = React.HTMLAttributes<HTMLDivElement>;
 

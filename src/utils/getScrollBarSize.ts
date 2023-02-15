@@ -1,30 +1,30 @@
-import { ObjectToHtmlStyle } from "./css";
+import { ObjectToHtmlStyle } from './css';
 
 let cached: number | null = null;
 
 export default function getScrollBarSize(): number {
-  if (typeof cached === "number") {
+  if (typeof cached === 'number') {
     return cached;
   }
-  const inner = document.createElement("div");
+  const inner = document.createElement('div');
   ObjectToHtmlStyle(
     {
-      width: "100%",
-      height: "200px",
+      width: '100%',
+      height: '200px',
     },
     inner
   );
-  const outer = document.createElement("div");
+  const outer = document.createElement('div');
   ObjectToHtmlStyle(
     {
-      position: "absolute",
-      top: "0",
-      left: "0",
-      pointerEvents: "none",
-      visibility: "hidden",
-      width: "200px",
-      height: "150px",
-      overflow: "hidden",
+      position: 'absolute',
+      top: '0',
+      left: '0',
+      pointerEvents: 'none',
+      visibility: 'hidden',
+      width: '200px',
+      height: '150px',
+      overflow: 'hidden',
     },
     outer
   );
@@ -33,7 +33,7 @@ export default function getScrollBarSize(): number {
   const widthContained = inner.offsetWidth;
   ObjectToHtmlStyle(
     {
-      overflow: "scroll",
+      overflow: 'scroll',
     },
     outer
   );

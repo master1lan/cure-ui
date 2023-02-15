@@ -1,5 +1,5 @@
-import Button from "@src/button";
-import Popover from ".";
+import Button from '@src/button';
+import Popover from '.';
 
 export default function PopoverExample() {
   return (

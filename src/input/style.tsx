@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const InputWrapper = styled.input`
   padding: 4px 11px;

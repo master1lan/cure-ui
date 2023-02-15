@@ -1,15 +1,15 @@
-import customcss from "../utils/css";
-import { ButtonWrapper } from "./style";
-import { ButtonProps, ButtonThemeType } from "./type";
-import CustomThemeProvider from "@src/utils/wapper";
-import { forwardRef } from "react";
+import customcss from '../utils/css';
+import { ButtonWrapper } from './style';
+import { ButtonProps, ButtonThemeType } from './type';
+import CustomThemeProvider from '@src/utils/wapper';
+import { forwardRef } from 'react';
 
 const Button = forwardRef(function Button(props: ButtonProps, ref: any) {
   const {
     sx,
-    shape = "default",
-    size = "middle",
-    type = "default",
+    shape = 'default',
+    size = 'middle',
+    type = 'default',
     ...resProps
   } = props;
   const ButtonTheme: ButtonThemeType = {

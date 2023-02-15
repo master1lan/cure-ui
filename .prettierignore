@@ -1,2 +1,2 @@
 src/**/*.test.ts*
-example/**
+src/**/example.ts*

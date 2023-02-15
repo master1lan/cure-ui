@@ -1,5 +1,5 @@
-import styled from "@emotion/styled";
-import { ThemeToCss } from "./type";
+import styled from '@emotion/styled';
+import { ThemeToCss } from './type';
 
 export const ButtonWrapper = styled.button`
   font-size: 16px;
