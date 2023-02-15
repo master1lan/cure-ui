@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useLayoutEffect, useState } from "react";
-import { ReactClientRect, ReactRef } from "./type";
-import getScrollBarSize from "./getScrollBarSize";
-import { getBodyMarginAndPadding } from "./fn";
+import { useCallback, useEffect, useLayoutEffect, useState } from 'react';
+import { ReactClientRect, ReactRef } from './type';
+import getScrollBarSize from './getScrollBarSize';
+import { getBodyMarginAndPadding } from './fn';
 /**
  * @description 获取ref元素的clientRect属性值
  */
@@ -37,7 +37,7 @@ export const usePlacement = ({
   triggerRect,
   contentRect,
 }: HuseplacementProps): TransFormCss => {
-  const [transform, set] = useState<TransFormCss>({ transform: "" });
+  const [transform, set] = useState<TransFormCss>({ transform: '' });
   useEffect(() => {
     if (!contentRect || !triggerRect) {
       return;
@@ -48,7 +48,10 @@ export const usePlacement = ({
         top: ContentTopPxNum,
         height: ContentHeightPxNum,
       } = contentRect!,
-      { width: TriggerWidthPxNum, height: TriggerHeightPxNum } = triggerRect!;
+      {
+        width: TriggerWidthPxNum,
+        // height: TriggerHeightPxNum
+      } = triggerRect!;
     const { margin: BodyMarginWithPx, padding: BodyPaddingWithPx } =
       getBodyMarginAndPadding();
     const XCenter =
@@ -72,12 +75,12 @@ export const useBodyScrollHide = (hidden: boolean) => {
     const ScrollSize = getScrollBarSize(),
       bodyStyle = document.body.style;
     if (hidden) {
-      bodyStyle.overflow = "hidden";
+      bodyStyle.overflow = 'hidden';
       bodyStyle.paddingRight = `${ScrollSize}px`;
     }
     return () => {
-      bodyStyle.overflow = "";
-      bodyStyle.paddingRight = "";
+      bodyStyle.overflow = '';
+      bodyStyle.paddingRight = '';
     };
   }, [hidden]);
 };
