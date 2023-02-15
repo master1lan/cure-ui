@@ -1,5 +1,29 @@
-```tsx
-import React from "react";
-
-export default () => <h1>Hello dumi!</h1>;
-```
+---
+hero:
+  title: cure-ui
+  description: 易扩展的简易React组件库
+  actions:
+    - text: 快速上手
+      link: /get-start
+    - text: Github
+      link: https://github.com/master1lan/cure-ui
+features:
+  - title: 轻量
+    emoji: 👌
+    description: 整体打包只有30kb
+  - title: 可拓展
+    emoji: 🤗
+    description: 使用 Css in js 技术轻易实现二次封装
+  - title: 完整的组件实现
+    emoji: 🥰
+    description: 轻松完成各种业务
+  - title: 非常快
+    emoji: 🤯
+    description: 依赖少，自然快
+  - title: 类型支持
+    emoji: 😎
+    description: 语法提示，减少出错
+  - title: 测试覆盖率100%
+    emoji: 😶‍🌫️
+    description: 让bug无处可藏
+---
