@@ -25,7 +25,7 @@ export default defineConfig({
     environment: 'jsdom',
     coverage: {
       provider: 'c8',
-      enabled: true,
+      enabled: false,
       reporter: ['text', 'json', 'html'],
     },
   },
