@@ -37,7 +37,10 @@
   },
   "config": {
     "commitizen": {
-      "path": "cz-conventional-changelog"
+      "path": "node_modules/cz-customizable"
+    },
+    "cz-customizable": {
+      "config": ".cz-config.cjs"
     }
   },
   "files": [
@@ -72,6 +75,7 @@
     "commitizen": "^4.3.0",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
     "dumi": "^2.1.10",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
