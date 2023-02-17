@@ -2,7 +2,17 @@ import { ObjectToHtmlStyle } from './css';
 
 let cached: number | null = null;
 
+function hasScrollbar(): boolean {
+  return (
+    document.body.scrollHeight >
+    (window.innerHeight || document.documentElement.clientHeight)
+  );
+}
+
 export default function getScrollBarSize(): number {
+  if (!hasScrollbar()) {
+    cached = 0;
+  }
   if (typeof cached === 'number') {
     return cached;
   }
