@@ -33,7 +33,8 @@
     "test:ui": "vitest --ui",
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
-    "commit": "cz"
+    "precommit": "npx lint-staged && npm run test",
+    "commit": "npm run precommit && cz"
   },
   "config": {
     "commitizen": {

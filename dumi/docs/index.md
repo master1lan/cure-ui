@@ -4,7 +4,7 @@ hero:
   description: 易扩展的简易React组件库
   actions:
     - text: 快速上手
-      link: /get-start
+      link: /getting-started
     - text: Github
       link: https://github.com/master1lan/cure-ui
 features:
