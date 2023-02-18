@@ -1,7 +1,6 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  publicPath: 'cure-ui/',
   resolve: {
     atomDirs: [
       {
