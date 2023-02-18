@@ -3,7 +3,7 @@ import { defineConfig } from 'dumi';
 export default defineConfig({
   codeSplitting: {
     jsStrategy: 'granularChunks',
-    // jsStrategyOptions: {},
+    jsStrategyOptions: {},
   },
   resolve: {
     atomDirs: [
