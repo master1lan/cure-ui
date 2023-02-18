@@ -24,7 +24,7 @@
     "dev:dumi": "run-s lib:build dumi",
     "lib:build": "vite build",
     "lib:types": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
-    "lib:doc": "cross-env ANALYZE=1 dumi build",
+    "lib:doc": "cross-env APP_ROOT=dumi dumi build",
     "doc:analyze": "cross-env APP_ROOT=dumi  ANALYZE=1 dumi build",
     "lib": "run-s lib:*",
     "version:prepatch": "npm version prepatch",
