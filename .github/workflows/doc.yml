@@ -2,7 +2,7 @@ name: project deploy
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "release" ]
     paths:
       - '**/*.md'
       - 'dumi/.dumirc.ts'
