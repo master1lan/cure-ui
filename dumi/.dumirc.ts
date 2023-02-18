@@ -1,7 +1,7 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  publicPath: '/cure-ui/',
+  // publicPath: '/cure-ui/',
   codeSplitting: {
     jsStrategy: 'granularChunks',
     jsStrategyOptions: {},
