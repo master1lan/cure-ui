@@ -50,5 +50,6 @@ export const MessageP = styled.p`
   margin-bottom: 10px;
   display: flex;
   flex-flow: row nowrap;
+  background-color: white;
   ${MessagePAnimationConstructor(3, 0.1)}
 `;
