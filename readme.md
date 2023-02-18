@@ -4,7 +4,7 @@
 
 易扩展的简易 React 组件库
 
-## 安装
+## install
 
 ### npm
 
