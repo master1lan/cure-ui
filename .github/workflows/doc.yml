@@ -15,15 +15,20 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - name: Setup Node.js
+    - name: Setup pnpm 
+      uses: pnpm/action-setup@v2
+      with:
+        version: 7
+        run_install: true
+    
+    - name: Setup Node
       uses: actions/setup-node@v3
       with:
-          node-version: '18.x'
-    - name: Install
-      run: npm install
+        node-version: 18
+        cache:  pnpm
 
     - name: Build doc
-      run: npm run lib:doc
+      run: pnpm run lib:doc
       
     - name: Deploy
       uses: crazy-max/ghaction-github-pages@v3
