@@ -2,23 +2,25 @@ name: project deploy
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "release" ]
     paths:
       - '**/*.md'
+      - 'dumi/.dumirc.ts'
+      - 'dumi/public/*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v2
     
     - name: Setup pnpm 
       uses: pnpm/action-setup@v2
       with:
         version: 7
         run_install: true
-        
+    
     - name: Setup Node
       uses: actions/setup-node@v3
       with:

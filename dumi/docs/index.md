@@ -1,4 +1,5 @@
 ---
+title: cure-ui
 hero:
   title: cure-ui
   description: 易扩展的简易React组件库
