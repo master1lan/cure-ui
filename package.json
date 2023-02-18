@@ -38,7 +38,7 @@
     "coverage": "vitest run --coverage",
     "prepare": "husky install",
     "precommit": "npx lint-staged && npm run test",
-    "commit": "npm run precommit && npm run lib && git add . && cz"
+    "commit": "npm run precommit && cz"
   },
   "config": {
     "commitizen": {

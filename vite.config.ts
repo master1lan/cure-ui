@@ -26,7 +26,7 @@ export default defineConfig({
     coverage: {
       provider: 'c8',
       enabled: false,
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'lcov'],
     },
   },
   build: {
