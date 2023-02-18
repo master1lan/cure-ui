@@ -68,7 +68,7 @@
     "@emotion/jest": "^11.10.5",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
-    "@types/node": "^18.13.0",
+    "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
     "@types/testing-library__jest-dom": "^5.14.5",
@@ -78,7 +78,7 @@
     "@vitest/coverage-c8": "^0.28.5",
     "@vitest/ui": "^0.28.5",
     "commitizen": "^4.3.0",
-    "commitlint": "^17.4.3",
+    "commitlint": "^17.4.4",
     "commitlint-config-gitmoji": "^2.3.1",
     "cross-env": "^7.0.3",
     "cz-conventional-changelog": "^3.3.0",
@@ -97,8 +97,8 @@
     "react-dom": "^18.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "tsc-alias": "^1.8.2",
-    "typescript": "^4.9.3",
-    "vite": "^4.1.1",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.2",
     "vitest": "^0.28.5",
     "webpack": "^5.75.0",
     "yalc": "1.0.0-pre.53"
@@ -121,8 +121,8 @@
     }
   },
   "dependencies": {
-    "@emotion/react": "^11.10.5",
-    "@emotion/styled": "^11.10.5",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
     "nanoid": "^4.0.1"
   }
 }
