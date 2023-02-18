@@ -9,7 +9,7 @@ title: Input
 # 使用
 
 ```tsx
-import {Input} from "cure-ui";
+import { Input } from 'cure-ui';
 export default function InputExample() {
   return (
     <>
@@ -21,4 +21,3 @@ export default function InputExample() {
   );
 }
 ```
-

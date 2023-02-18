@@ -2,8 +2,6 @@
 title: Modal
 ---
 
-
-
 # modal 组件
 
 modal 组件基于 portal 组件完成，Modal 可以用来快速创建对话框、弹出窗口、下拉抽屉等任何你所需要的组件。
