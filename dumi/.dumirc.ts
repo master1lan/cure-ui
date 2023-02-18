@@ -5,7 +5,7 @@ const isProd = process.env.NODE_ENV === 'production';
 export default defineConfig({
   base: '/cure-ui',
   publicPath: '/cure-ui/',
-  mfsu: { strategy: 'normal' },
+  // mfsu: { strategy: 'normal' },
   routePrefetch: {},
   manifest: {},
   resolve: {
