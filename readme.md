@@ -21,6 +21,8 @@ yarn add cure-ui @emotion/styled @emotion/react
 pnpm add cure-ui @emotion/styled @emotion/react
 ```
 
+由于 cure-ui 需要编译所以无法提供 CDN 版本链接。
+
 ## 文件结构
 
 1. dumi 下的 docs 存放文档，使用 markdown 编写。dumi 官网：https://d.umijs.org/。
