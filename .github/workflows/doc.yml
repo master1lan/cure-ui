@@ -34,4 +34,4 @@ jobs:
         target_branch:  gh-pages
         build_dir:  dumi/dist
       env: 
-        github-token: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ secrets.DOC_TOKEN }}
