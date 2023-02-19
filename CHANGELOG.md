@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.1](https://github.com/master1lan/cure-ui/compare/v0.0.0...v0.0.1) (2023-02-19)
+
+
+### ✅ Tests
+
+* **custom**: 测试发布 ([5f6f899](https://github.com/master1lan/cure-ui/commit/5f6f899))
+
+
+
 # 0.0.0 (2023-02-19)
 
 

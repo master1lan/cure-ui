@@ -1,6 +1,6 @@
 {
   "name": "cure-ui",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "author": "master1lan",
   "description": "Simple implementation of react component library",
   "type": "module",
