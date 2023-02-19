@@ -25,8 +25,8 @@ module.exports = {
       name: '♿️ perf: 性能优化',
     },
     {
-      value: 'test',
-      name: 'test: 测试',
+      value: ':poop: test',
+      name: '💩 test: 测试',
     },
     {
       value: ':adhesive_bandage: chore',

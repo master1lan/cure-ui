@@ -11,14 +11,13 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/master1lan/cure-ui",
-    "directory": "src"
+    "url": "https://github.com/master1lan/cure-ui"
   },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/master1lan/cure-ui/issues"
   },
-  "homepage": "todo",
+  "homepage": "https://master1lan.github.io/cure-ui",
   "scripts": {
     "dev:src": "vite",
     "dev:dumi": "run-s lib:build dumi",
