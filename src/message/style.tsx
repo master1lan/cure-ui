@@ -51,5 +51,6 @@ export const MessageP = styled.p`
   display: flex;
   flex-flow: row nowrap;
   background-color: white;
+  color: black;
   ${MessagePAnimationConstructor(3, 0.1)}
 `;
