@@ -12,7 +12,11 @@ export default function Popover(props: PopOverProps) {
   return (
     <>
       {cloneElement(children, {
-        onClick: () => set((item) => !item),
+        onClick: () => {
+          if (children.props?.onClick instanceof Function)
+            children.props?.onClick();
+          set((item) => !item);
+        },
         ref: anchorRef,
       })}
       {open && (

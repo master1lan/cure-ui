@@ -18,3 +18,11 @@ export default function PopoverExample() {
   );
 }
 ```
+
+## API
+
+| 参数        | 说明                                    | 类型         | 默认值 |
+| ----------- | --------------------------------------- | ------------ | ------ |
+| defaultOpen | content 默认是否打开                    | boolean      | false  |
+| children    | 正常元素，需要保证可以调用 onClick 函数 | ReactElement |        |
+| content     | 展示元素，需要自行定位                  | ReactElement |        |

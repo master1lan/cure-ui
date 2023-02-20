@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [0.0.2](https://github.com/master1lan/cure-ui/compare/v0.0.0...v0.0.2) (2023-02-20)
+
+
+### ✅ Tests
+
+* **custom**: 测试发布 ([5f6f899](https://github.com/master1lan/cure-ui/commit/5f6f899))
+
+
+### 🐛 Bug Fixes
+
+* **custom**: 修复Popover组件和Tooltip中children内部某些合成事件无法生效问题 ([cc2d04b](https://github.com/master1lan/cure-ui/commit/cc2d04b))
+
 ## [0.0.1](https://github.com/master1lan/cure-ui/compare/v0.0.0...v0.0.1) (2023-02-19)
 
 

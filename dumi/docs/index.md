@@ -11,10 +11,10 @@ hero:
 features:
   - title: 轻量
     emoji: 👌
-    description: 整体打包只有10kb
+    description: 整体打包小于20kb，支持按需打包。
   - title: 可拓展
     emoji: 🤗
-    description: 使用 Css in js 技术轻易实现二次封装
+    description: 样式全部采用Css in Js编写，大部分组件抛出sx熟悉支持自定义样式
   - title: 完整的组件实现
     emoji: 🥰
     description: 轻松完成各种业务
