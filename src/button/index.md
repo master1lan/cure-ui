@@ -29,3 +29,11 @@ export default function ButtonExample() {
   );
 }
 ```
+
+## API
+
+| 参数  | 说明                 | 类型                         | 默认值    |
+| ----- | -------------------- | ---------------------------- | --------- |
+| shape | 按钮外形             | 'default'\|'circle'\|'round' | 'default' |
+| size  | 按钮大小             | 'large'\|'middle'\|'small'   | 'middle'  |
+| sx    | 自定义 CSSProperties | CSSProperties                |           |

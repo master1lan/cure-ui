@@ -14,8 +14,16 @@ export default function ToolTip(props: ToolTipProps) {
   return (
     <>
       {cloneElement(children, {
-        onMouseEnter: set.bind(null, true),
-        onMouseLeave: set.bind(null, false),
+        onMouseEnter: () => {
+          if (children.props.onMouseEnter instanceof Function)
+            children.props.onMouseEnter();
+          set(true);
+        },
+        onMouseLeave: () => {
+          if (children.props.onMouseLeave instanceof Function)
+            children.props.onMouseLeave();
+          set(false);
+        },
         ref: targetEleRef,
         ...resProps,
       })}

@@ -20,3 +20,15 @@ export default function TooltipExample() {
   );
 }
 ```
+
+## API
+
+| 参数  | 说明     | 类型   | 默认值 |
+| ----- | -------- | ------ | ------ |
+| title | 提示文字 | string |        |
+
+## FAQ
+
+Q：为什么有了 Popover 还要有 tooltip？
+
+A：tooltip 主要应用常见类似 html 标签的 title，而 Popover 可以承载更多的信息。这里建议将两个组件按照不同场景使用降低心智负担。

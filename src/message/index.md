@@ -20,3 +20,9 @@ export default function MessageExample() {
   );
 }
 ```
+
+## API
+
+| 参数 | 说明         | 类型               | 默认值 |
+| ---- | ------------ | ------------------ | ------ |
+| info | message 弹出 | (msg:string)=>void |        |

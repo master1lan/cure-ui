@@ -1,6 +1,12 @@
 # cure-ui
 
 [![Coverage Status](https://coveralls.io/repos/github/master1lan/cure-ui/badge.svg?branch=master)](https://coveralls.io/github/master1lan/cure-ui?branch=master)
+![npm](https://img.shields.io/npm/dt/cure-ui)
+![npm](https://img.shields.io/npm/v/cure-ui)
+![npm bundle size](https://img.shields.io/bundlephobia/min/cure-ui)
+![npm type definitions](https://img.shields.io/npm/types/cure-ui)
+[![dumi](https://img.shields.io/badge/docs%20by-dumi-blue)](https://github.com/umijs/dumi)
+![NPM](https://img.shields.io/npm/l/cure-ui)
 
 易扩展的简易 React 组件库
 
